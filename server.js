@@ -4,6 +4,9 @@ require('dotenv').config();
 const connectDB = require("./config/db")
 const session = require("express-session")
 const passport = require("passport")
+const routes = require("./routes"); 
+const {isAuthenticated} = require("./middleware/authenticate")
+const path = require("path")
 
 //Passport config 
 require("./config/passport")
@@ -25,7 +28,9 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//Routes
 app.use("/auth", require("./routes/auth"));
+app.use("/", routes);
 
 (async () => {
     try {

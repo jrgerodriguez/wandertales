@@ -532,6 +532,13 @@ input[type="submit"]:hover {
 
 /* PAGINA FORMULARIO NUEVO ARTICULO*/
 
+.span-image,
+input[type="file"]  {
+  margin: 0 !important;
+}
+
+
+
 .textarea-grande,
 input[type="text"] {
   width: 100%;

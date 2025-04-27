@@ -31,10 +31,14 @@
     <div class="comentarios-contenedor width-85 formulario-contenedor">
         <span class="span seccion-titulo no-margin">NUEVO ARTICULO</span>
 
-        <form action="">
-            <input type="text" placeholder="TITULO">
+        <form action="/crear" method="post">
+            <input type="text" placeholder="TITULO" name="articulo-titulo" required>
 
-            <textarea name="" id="" class="textarea-grande" placeholder="CONTENIDO"></textarea>
+            <span class="span span-image">IMAGEN</span>
+            <input type="text" name="articulo-imagen" required>
+
+            <textarea id="" class="textarea-grande" placeholder="CONTENIDO" name="articulo-contenido" required></textarea>
+
             <input type="submit" value="ENVIAR">
         </form>
     </div>
