@@ -31,11 +31,11 @@
     <div class="comentarios-contenedor width-85 formulario-contenedor">
         <span class="span seccion-titulo no-margin">NUEVO ARTICULO</span>
 
-        <form action="/crear" method="post">
+        <form action="/crear" method="post" enctype="multipart/form-data" id="nuevoArticuloFormulario">
             <input type="text" placeholder="TITULO" name="articulo-titulo" required>
 
             <span class="span span-image">IMAGEN</span>
-            <input type="text" name="articulo-imagen" required>
+            <input type="file" name="articulo-imagen" required>
 
             <textarea id="" class="textarea-grande" placeholder="CONTENIDO" name="articulo-contenido" required></textarea>
 
@@ -54,5 +54,6 @@
       AOS.init();
     </script>
     <script src="./js/main.js" type="module" ></script>
+    <script src="./js/articuloCreado.js" type="module" ></script>
 </body>
 </html>
