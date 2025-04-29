@@ -8,4 +8,8 @@ router.post("/crear", isAuthenticated, upload.single("articulo-imagen"), control
 
 router.get("/articulos", controller.obtenerArticulos)
 
+router.get("/articulo", controller.obtenerArticulo)
+
+router.get("/get-user/:autor_id", controller.obtenerUsuario)
+
 module.exports = router
