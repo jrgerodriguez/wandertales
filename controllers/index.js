@@ -63,4 +63,20 @@ const crearArticulo = async (req, res) => {
     }
 }
 
-module.exports = {crearArticulo}
+const obtenerArticulos = async (req, res) => {
+    try { 
+        const articles = await Article.find({})
+
+        if (!articles || articles.length === 0) {
+            return res.status(404).json({ message: "No articles found" });
+        }
+
+        res.status(200).json(articles)
+
+    } catch (error) {
+        console.error("Unable to get Articles:", error.message);
+        res.status(500).json({ message: "Internal server error" });
+    }
+}
+
+module.exports = {crearArticulo, obtenerArticulos}

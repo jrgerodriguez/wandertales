@@ -6,4 +6,6 @@ const upload = require("../utilities/multer")
 
 router.post("/crear", isAuthenticated, upload.single("articulo-imagen"), controller.crearArticulo)
 
+router.get("/articulos", controller.obtenerArticulos)
+
 module.exports = router
