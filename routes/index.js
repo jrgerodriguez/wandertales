@@ -12,4 +12,8 @@ router.get("/articulo", controller.obtenerArticulo)
 
 router.get("/get-user/:autor_id", controller.obtenerUsuario)
 
+router.post("/publicar-comentario", controller.publicarComentario)
+
+router.get("/mostrar-comentarios/:articulo_id", controller.mostrarComentarios)
+
 module.exports = router

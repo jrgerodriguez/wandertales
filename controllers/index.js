@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { User, Article } = require("../models");
+const { User, Article, Comment } = require("../models");
 const cloudinary = require('cloudinary').v2;
 
 //Cloudinary for images
@@ -115,4 +115,54 @@ const obtenerUsuario = async (req, res) => {
 
 }
 
-module.exports = {crearArticulo, obtenerArticulos, obtenerArticulo, obtenerUsuario}
+const publicarComentario = async (req, res) => {
+
+    const { nombre, 
+            'contenido-comentario': contenido,
+            articuloId            
+    } = req.body
+
+    const nuevoComentario = {
+        nombre, 
+        contenido,
+        articuloId
+    }
+
+    res.send(req.body)
+    console.log(nuevoComentario)
+
+    if (!nuevoComentario.nombre || !nuevoComentario.contenido) {
+        return res.status(400).json({error: "Faltan algunos campos"})
+    }
+    
+    try {
+        await Comment.create(nuevoComentario)
+        res.json({ success: true });
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+
+}
+
+const mostrarComentarios = async (req, res) => {
+    const articulo_id = req.params.articulo_id
+
+    try {
+        const comments = await Comment.find({articuloId: articulo_id})
+
+        if (!comments || comments.length === 0) {
+            return res.status(404).json({ message: "No articles found" });
+        }
+
+        res.status(200).json(comments)
+
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({ message: "Internal server error" });
+    }
+
+
+}
+
+module.exports = {crearArticulo, obtenerArticulos, obtenerArticulo, obtenerUsuario, publicarComentario, mostrarComentarios}

@@ -35,9 +35,6 @@
     <div class="comentarios-contenedor width-85">
         <span class="span seccion-titulo">COMENTARIOS</span>
         <div class="comentarios">
-            <p><span class="span negrita">ELIZEO EZEQUIEL</span> <span class="span">7 ABR 25</span></p>
-            <p class="comentario-texto">Me encanto leer este articulo, muchas gracias por compartirlo.</p>
-            <div class="botones-accion-contenedor"><a href=""><span class="span">ELIMINAR</span></a> <a href=""><span class="span">EDITAR</span></a></div>
         </div>
     </div>
     <!-- /Comentarios -->
@@ -48,8 +45,9 @@
     <div class="comentarios-contenedor width-85 formulario-contenedor">
         <span class="span seccion-titulo">DEJA UN COMENTARIO</span>
 
-        <form action="">
-            <textarea name="" id="" class="textarea"></textarea>
+        <form action="/publicar-comentario" method="post" id="formulario-comentario">
+            <input type="text" placeholder="NOMBRE" name="nombre" required id="nombre">
+            <textarea name="contenido-comentario" id="contenido-comentario" class="textarea" required></textarea>
             <input type="submit" value="PUBLICAR">
         </form>
     </div>

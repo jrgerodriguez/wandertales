@@ -473,6 +473,13 @@ hr {
   margin-bottom: .5rem;
 }
 
+.comentario {
+  margin-top: 2rem;
+  p{
+    margin: 0;
+  }
+}
+
 form {
   width: 100%;
   display: flex;

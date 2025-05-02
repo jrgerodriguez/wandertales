@@ -1,5 +1,8 @@
 const mongoose = require("mongoose")
 
+/*
+USER SCHEMA
+*/
 const userSchema = new mongoose.Schema({
     googleId: {
         type: String, 
@@ -24,6 +27,9 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("user", userSchema);
 
+/*
+ARTICLE SCHEMA
+*/
 const articleSchema = new mongoose.Schema({
     titulo: {
         type: String,
@@ -54,4 +60,28 @@ const articleSchema = new mongoose.Schema({
 
 const Article = mongoose.model("article", articleSchema);
 
-module.exports = {User, Article}
+/*
+COMMENT SCHEMA
+*/
+const commentSchema = new mongoose.Schema({
+
+    nombre: {
+        type: String, 
+        required: true
+    },
+
+    contenido: {
+        type: String,
+        required: true
+    },
+    
+    articuloId: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "Article",  
+        required: true, 
+    }
+})
+
+const Comment = mongoose.model("comment", commentSchema)
+
+module.exports = {User, Article, Comment}
