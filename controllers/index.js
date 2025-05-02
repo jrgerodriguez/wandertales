@@ -128,7 +128,6 @@ const publicarComentario = async (req, res) => {
         articuloId
     }
 
-    res.send(req.body)
     console.log(nuevoComentario)
 
     if (!nuevoComentario.nombre || !nuevoComentario.contenido) {
