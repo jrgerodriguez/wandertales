@@ -65,7 +65,7 @@ const crearArticulo = async (req, res) => {
 
 const obtenerArticulos = async (req, res) => {
     try { 
-        const articles = await Article.find({})
+        const articles = await Article.find({}).sort({ createdAt: -1 });
 
         if (!articles || articles.length === 0) {
             return res.status(404).json({ message: "No articles found" });
