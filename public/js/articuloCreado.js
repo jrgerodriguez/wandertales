@@ -1,6 +1,11 @@
 document.querySelector("#nuevoArticuloFormulario").addEventListener("submit", (e) => {
     e.preventDefault()
 
+    const enviarFormularioBtn = document.querySelector("#enviarFormularioBtn")
+
+    enviarFormularioBtn.disabled = true;
+    enviarFormularioBtn.value = "CARGANDO..."
+
     const formData = new FormData(e.target);
 
     fetch("/crear", {
@@ -20,5 +25,9 @@ document.querySelector("#nuevoArticuloFormulario").addEventListener("submit", (e
     .catch(error => {
         console.error(error)
         alert("Hubo un error al procesar la solicitud")
+    })
+    .finally(() => {
+        enviarFormularioBtn.disabled = false;
+        enviarFormularioBtn.value = "ENVIAR";
     })
 })
