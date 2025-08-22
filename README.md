@@ -9,6 +9,7 @@ Web application/blog made with Node.js, Express, MongoDb where travelers can sha
 - Express
 - MongoDB
 - OAuth2 (Gmail)
+- Mongoose
 
 ## FEATURES
 - Login through OAuth2 with Gmail.
