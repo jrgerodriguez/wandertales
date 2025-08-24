@@ -16,8 +16,6 @@ Web application/blog made with Node.js, Express, MongoDb where travelers can sha
 - Create blog posts and comments
 - Responsive Design
 
-#IMAGES
-
 <img width="1893" height="934" alt="image" src="https://github.com/user-attachments/assets/b2582ea8-7890-424b-8217-6c2f5b729e40" />
 
 <img width="1898" height="933" alt="image" src="https://github.com/user-attachments/assets/0c754b92-ee9b-4d5b-a570-2e2b580e1e98" />
